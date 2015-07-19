@@ -10,6 +10,7 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 ConnectionInfo.cs
+*.json
 
 # Build results
 [Dd]ebug/
@@ -164,6 +165,7 @@ ClientBin/
 node_modules/
 bower_components/
 
+
 # RIA/Silverlight projects
 Generated_Code/
 
@@ -178,6 +180,7 @@ UpgradeLog*.htm
 # SQL Server files
 *.mdf
 *.ldf
+
 
 # Business Intelligence projects
 *.rdl.data
@@ -195,3 +198,4 @@ FakesAssemblies/
 
 # Visual Studio 6 workspace options file
 *.opt
+GroupMe/GroupMe/ConnectionInfo.cs

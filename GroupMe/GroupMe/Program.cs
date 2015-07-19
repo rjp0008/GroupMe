@@ -14,12 +14,12 @@ namespace GroupMe
     {
         static void Main(string[] args)
         {
-            ParseMessages();
+            MakeJSON();
         }
 
         static void MakeText()
         {
-            StreamReader read = new StreamReader("54709.json");
+            StreamReader read = new StreamReader("54790.json");
             string text = read.ReadToEnd();
             var test = (Response)JsonConvert.DeserializeObject(text);
             StreamWriter allText = new StreamWriter("text.txt");
@@ -30,8 +30,8 @@ namespace GroupMe
 
         static void MakeJSON()
         {
-            StreamReader test = new StreamReader("54709.txt");
-            StreamWriter output = new StreamWriter("54709.json");
+            StreamReader test = new StreamReader("54790.txt");
+            StreamWriter output = new StreamWriter("54790.json");
             while (!test.EndOfStream)
             {
                 output.WriteLine(test.ReadLine() + ",");
