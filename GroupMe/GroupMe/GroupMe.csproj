@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnectionInfo.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="Meta.cs" />
     <Compile Include="Program.cs" />
