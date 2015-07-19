@@ -42,12 +42,12 @@ namespace GroupMe
 
         static void ParseMessages()
         {
-            string urlString = "https://api.groupme.com/v3/groups/3000143/messages?token=test&limit=100&before_id=";
-            string beforeID = "id";
+            string urlString = "https://api.groupme.com/v3/groups/3000143/messages?token=test&limit=100";
+            string beforeID = "&before_id=";
             List<Message> allMessages = new List<Message>();
             for (int i = 0; i < 1000; i++)
             {
-                var httpWebRequest = (HttpWebRequest)WebRequest.Create(urlString + beforeID);
+                var httpWebRequest = (HttpWebRequest)WebRequest.Create(urlString + (beforeID == "&before_id=" ? "":beforeID));
                 httpWebRequest.ContentType = "text/json";
                 httpWebRequest.Method = "GET";
 
@@ -74,7 +74,7 @@ namespace GroupMe
                 }
                 RootObject m = JsonConvert.DeserializeObject<RootObject>(data);
                 allMessages.AddRange(m.response.messages);
-                beforeID = allMessages.Last().id;
+                beforeID = "&before_id=" + allMessages.Last().id;
 
             }
             StreamWriter test = new StreamWriter(allMessages.Count.ToString() + ".txt");
