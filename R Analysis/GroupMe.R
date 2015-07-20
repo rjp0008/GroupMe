@@ -15,3 +15,17 @@ dateTimeCount <- function(createdAtPosixlt){
     }
     data.frame(Hour = hours,MessageCount = hoursCount)
 }
+
+dateTimeCountByUser <- function(messages){
+    users <- unique(msg$sender_id[msg$sender_id!="system"])
+    hourCounts <- vector(mode = "list",length = length(users))
+    for(i in 1:length(users)){
+        hourCounts[[i]] <- dateTimeCount(msg$created_at[msg$sender_id==users[i]])
+    }
+    hourCounts
+}
+
+plotGroup<- function(dfs){
+    colors <- rainbow(1:length(dfs))
+    plot()
+}

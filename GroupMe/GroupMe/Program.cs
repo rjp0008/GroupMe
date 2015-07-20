@@ -14,7 +14,7 @@ namespace GroupMe
     {
         static void Main(string[] args)
         {
-            MakeJSON();
+            ParseMessages();
         }
 
         static void MakeText()
